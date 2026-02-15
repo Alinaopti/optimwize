@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OptimWize - Revenue Operations Consulting</title>
+    <title>OptimWize - Scale Without Operational Chaos</title>
+    <meta name="description" content="Build the operational backbone that gives you clarity, control, and predictable growth. Fix the systems behind your revenue.">
     <style>
         * {
             margin: 0;
@@ -16,6 +17,8 @@
             --primary-dark: #1e40af;
             --secondary: #0f172a;
             --accent: #06b6d4;
+            --cta-green: #10b981;
+            --cta-green-dark: #059669;
             --text: #1e293b;
             --text-light: #64748b;
             --bg: #ffffff;
@@ -92,17 +95,24 @@
 
         .hero p {
             font-size: 1.25rem;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             opacity: 0.95;
-            max-width: 600px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .cta-button {
             display: inline-block;
             padding: 1.125rem 3rem;
-            background: #10b981;
+            background: var(--cta-green);
             color: white;
             text-decoration: none;
             border-radius: 50px;
@@ -132,7 +142,18 @@
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(16, 185, 129, 0.5);
-            background: #059669;
+            background: var(--cta-green-dark);
+        }
+
+        .cta-button-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-button-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
         }
 
         /* Stats Section */
@@ -163,8 +184,8 @@
             opacity: 0.9;
         }
 
-        /* Services Section */
-        .services {
+        /* Pain Points Section */
+        .pain-points {
             padding: 8rem 2rem;
             background: var(--bg-light);
         }
@@ -185,6 +206,58 @@
         .section-header p {
             font-size: 1.1rem;
             color: var(--text-light);
+        }
+
+        .pain-list {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            list-style: none;
+        }
+
+        .pain-list li {
+            padding: 1.25rem 1.5rem;
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            font-size: 1.1rem;
+            color: var(--text);
+            position: relative;
+            padding-left: 3.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .pain-list li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .pain-list li::before {
+            content: '✗';
+            position: absolute;
+            left: 1.25rem;
+            color: #ef4444;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .pain-subtext {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text);
+            font-weight: 600;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 2rem;
+            background: white;
         }
 
         .services-grid {
@@ -234,9 +307,35 @@
             color: var(--secondary);
         }
 
-        .service-card p {
+        .service-card ul {
+            list-style: none;
             color: var(--text-light);
-            line-height: 1.7;
+            line-height: 1.9;
+        }
+
+        .service-card ul li {
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--cta-green);
+            font-weight: 700;
+        }
+
+        .services-subtext {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text);
+            font-weight: 600;
+            max-width: 700px;
+            margin: 3rem auto 0;
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 12px;
         }
 
         /* Process Section */
@@ -257,6 +356,25 @@
             grid-template-columns: 80px 1fr;
             gap: 2rem;
             align-items: start;
+        }
+
+        .process-connector {
+            position: relative;
+        }
+
+        .process-connector::before {
+            content: '';
+            position: absolute;
+            left: 40px;
+            top: 80px;
+            bottom: -40px;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary), var(--accent));
+            opacity: 0.3;
+        }
+
+        .step:last-child .process-connector::before {
+            display: none;
         }
 
         .step-number {
@@ -315,10 +433,50 @@
             line-height: 1.7;
         }
 
+        /* Results Section */
+        .results {
+            padding: 8rem 2rem;
+            background: var(--bg-light);
+        }
+
+        .results-list {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .result-item {
+            background: white;
+            padding: 1.75rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            font-size: 1.1rem;
+            color: var(--text);
+            position: relative;
+            padding-left: 3.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .result-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .result-item::before {
+            content: '✓';
+            position: absolute;
+            left: 1.25rem;
+            color: var(--cta-green);
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+
         /* Testimonials */
         .testimonials {
             padding: 8rem 2rem;
-            background: var(--bg-light);
+            background: white;
         }
 
         .testimonials-grid {
@@ -384,7 +542,7 @@
         /* Contact Section */
         .contact {
             padding: 8rem 2rem;
-            background: white;
+            background: var(--bg-light);
         }
 
         .contact-container {
@@ -429,7 +587,7 @@
         .submit-button {
             width: 100%;
             padding: 1.125rem;
-            background: #10b981;
+            background: var(--cta-green);
             color: white;
             border: none;
             border-radius: 8px;
@@ -460,31 +618,11 @@
         .submit-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(16, 185, 129, 0.5);
-            background: #059669;
+            background: var(--cta-green-dark);
         }
 
         .submit-button:active {
             transform: translateY(0);
-        }
-
-        .form-message {
-            margin-top: 1rem;
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            display: none;
-        }
-
-        .form-message.success {
-            background: #d1fae5;
-            color: #065f46;
-            display: block;
-        }
-
-        .form-message.error {
-            background: #fee2e2;
-            color: #991b1b;
-            display: block;
         }
 
         /* Footer */
@@ -509,6 +647,24 @@
             color: var(--text);
             padding: 0.5rem;
             z-index: 1001;
+        }
+
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-overlay.active {
+            display: block;
+            opacity: 1;
         }
 
         @media (max-width: 768px) {
@@ -547,24 +703,6 @@
                 display: block;
             }
 
-            .mobile-overlay {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0,0,0,0.5);
-                z-index: 999;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            }
-
-            .mobile-overlay.active {
-                display: block;
-                opacity: 1;
-            }
-
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -584,6 +722,16 @@
 
             .step-number {
                 margin: 0 auto;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
             }
         }
 
@@ -625,26 +773,6 @@
             opacity: 1;
             transform: translateX(0);
         }
-
-        /* Process flow connector */
-        .process-connector {
-            position: relative;
-        }
-
-        .process-connector::before {
-            content: '';
-            position: absolute;
-            left: 40px;
-            top: 80px;
-            bottom: -40px;
-            width: 3px;
-            background: linear-gradient(180deg, var(--primary), var(--accent));
-            opacity: 0.3;
-        }
-
-        .step:last-child .process-connector::before {
-            display: none;
-        }
     </style>
 </head>
 <body>
@@ -653,9 +781,9 @@
         <div class="nav-container">
             <a href="#" class="logo">OptimWize</a>
             <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
+                <li><a href="#pain-points">Challenges</a></li>
+                <li><a href="#services">Solutions</a></li>
                 <li><a href="#process">Process</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
@@ -665,12 +793,15 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Optimize Your Revenue Operations</h1>
-        <p>We help businesses scale with strategy, automation, and data-driven insights that deliver measurable results.</p>
-        <a href="#contact" class="cta-button">Get Started</a>
+        <h1>Scaling fast but everything feels messy?</h1>
+        <p>Leads slip through the cracks. Teams work in silos. Reports don't match reality. You didn't start your company to manage spreadsheets, broken pipelines, and tool chaos. We build the operational backbone that gives you clarity, control, and predictable growth — so your team can scale without friction.</p>
+        <div class="cta-buttons">
+            <a href="#contact" class="cta-button">Book a Strategy Call</a>
+            <a href="#process" class="cta-button cta-button-secondary">See How It Works</a>
+        </div>
     </section>
 
-    <!-- Stats Section -->
+    <!-- Stats Section (kept for credibility) -->
     <section class="stats">
         <div class="stats-grid">
             <div class="stat-item">
@@ -688,85 +819,126 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <!-- Pain Points Section -->
+    <section id="pain-points" class="pain-points">
         <div class="section-header">
-            <h2>Our Services</h2>
-            <p>Comprehensive revenue operations solutions designed to accelerate your growth</p>
+            <h2>Does this sound familiar?</h2>
         </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">📊</div>
-                <h3>Data & Analytics</h3>
-                <p>Transform raw data into actionable insights. We build custom dashboards and reporting systems that give you complete visibility into your sales and marketing performance.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">⚙️</div>
-                <h3>Revenue Automation</h3>
-                <p>Eliminate manual tasks and reduce errors. Our automation solutions streamline your workflows, saving time and increasing accuracy across your entire revenue engine.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🎯</div>
-                <h3>RevOps Strategy</h3>
-                <p>Align sales, marketing, and customer success for maximum impact. We develop strategies that create sustainable growth and predictable revenue.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🔧</div>
-                <h3>Tech Stack Optimization</h3>
-                <p>Maximize your technology investment. We audit, integrate, and optimize your tools to create a seamless revenue operations ecosystem.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">📈</div>
-                <h3>Performance Tracking</h3>
-                <p>Monitor what matters. We implement KPI frameworks and tracking systems that keep your team focused on revenue-driving activities.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">👥</div>
-                <h3>Team Training</h3>
-                <p>Empower your team with best practices. We provide hands-on training and documentation to ensure long-term success.</p>
-            </div>
+        <ul class="pain-list">
+            <li>Revenue numbers don't match across tools</li>
+            <li>Sales, marketing & CS are misaligned</li>
+            <li>Your CRM is messy or barely used</li>
+            <li>You don't know which metrics actually matter</li>
+            <li>Processes live in people's heads</li>
+            <li>Growth creates more chaos, not clarity</li>
+            <li>Reporting takes hours and still feels unreliable</li>
+        </ul>
+        <div class="pain-subtext">
+            If scaling feels harder than it should, the problem isn't growth. It's the systems behind it.
         </div>
     </section>
 
-    <!-- Process Section -->
+    <!-- What We Do Section -->
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2>We build the systems behind predictable growth</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>Operational Clarity</h3>
+                <ul>
+                    <li>Define and streamline your processes</li>
+                    <li>Identify bottlenecks slowing growth</li>
+                    <li>Optimize workflows and execution</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Metrics & Visibility</h3>
+                <ul>
+                    <li>KPI design & performance tracking</li>
+                    <li>Dashboards & real-time reporting</li>
+                    <li>Data clarity for confident decisions</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚙️</div>
+                <h3>Systems & Automation</h3>
+                <ul>
+                    <li>CRM setup & optimization</li>
+                    <li>Workflow automation and tool integrations</li>
+                    <li>Tech stack evaluation & optimization</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Scalable Infrastructure</h3>
+                <ul>
+                    <li>Knowledge bases & playbooks</li>
+                    <li>Standardized documentation</li>
+                    <li>Operational frameworks that scale</li>
+                </ul>
+            </div>
+        </div>
+        <div class="services-subtext">
+            So your team moves faster, makes better decisions, and scales predictably.
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
     <section id="process" class="process">
         <div class="section-header">
-            <h2>Our Process</h2>
-            <p>A proven methodology that delivers results</p>
+            <h2>From chaos to clarity</h2>
         </div>
         <div class="process-steps">
             <div class="step process-connector">
                 <div class="step-number">1</div>
                 <div class="step-content">
-                    <h3>Discovery & Audit</h3>
-                    <p>We start by understanding your business goals, analyzing your current systems, and identifying opportunities for improvement. This includes a comprehensive audit of your data, processes, and technology stack.</p>
+                    <h3>Diagnose</h3>
+                    <p>We identify bottlenecks, inefficiencies, and blind spots.</p>
                 </div>
             </div>
             <div class="step process-connector">
                 <div class="step-number">2</div>
                 <div class="step-content">
-                    <h3>Strategic Planning</h3>
-                    <p>Based on our findings, we develop a customized roadmap that aligns with your objectives. This includes prioritized recommendations, resource planning, and clear success metrics.</p>
+                    <h3>Design</h3>
+                    <p>We create scalable workflows, metrics, and operational systems.</p>
                 </div>
             </div>
             <div class="step process-connector">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <h3>Implementation</h3>
-                    <p>Our team works alongside yours to execute the plan. We handle everything from system configuration and data migration to workflow automation and integration setup.</p>
+                    <h3>Enable</h3>
+                    <p>We implement dashboards, automations, and tool integrations.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-number">4</div>
                 <div class="step-content">
-                    <h3>Optimization & Support</h3>
-                    <p>We continuously monitor performance, provide ongoing optimization, and ensure your team has the training and support needed for long-term success.</p>
+                    <h3>Optimize</h3>
+                    <p>We monitor performance and continuously refine processes.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Results Section -->
+    <section id="results" class="results">
+        <div class="section-header">
+            <h2>What changes after we work together</h2>
+        </div>
+        <div class="results-list">
+            <div class="result-item">Clear visibility into performance</div>
+            <div class="result-item">Aligned teams & smoother handoffs</div>
+            <div class="result-item">Reliable forecasting & reporting</div>
+            <div class="result-item">Faster execution with fewer errors</div>
+            <div class="result-item">Less manual work & tool chaos</div>
+            <div class="result-item">Scalable processes that support growth</div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section (kept with original testimonials) -->
     <section id="testimonials" class="testimonials">
         <div class="section-header">
             <h2>What Our Clients Say</h2>
@@ -830,14 +1002,14 @@
                     <label for="message">Message *</label>
                     <textarea id="message" name="message" required></textarea>
                 </div>
-                <button type="submit" class="submit-button">Send Message</button>
+                <button type="submit" class="submit-button">Book a Strategy Call</button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 OptimWize. All rights reserved.</p>
+        <p>&copy; 2025 OptimWize. All rights reserved. | Scale without operational chaos.</p>
     </footer>
 
     <script>
@@ -917,6 +1089,13 @@
             observer.observe(step);
         });
 
+        // Observe result items
+        document.querySelectorAll('.result-item').forEach((item, index) => {
+            item.classList.add('fade-in');
+            item.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(item);
+        });
+
         // Observe testimonial cards
         document.querySelectorAll('.testimonial-card').forEach((card, index) => {
             card.classList.add('fade-in');
@@ -929,6 +1108,13 @@
             stat.classList.add('fade-in');
             stat.style.transitionDelay = `${index * 0.1}s`;
             observer.observe(stat);
+        });
+
+        // Observe pain points
+        document.querySelectorAll('.pain-list li').forEach((item, index) => {
+            item.classList.add('fade-in');
+            item.style.transitionDelay = `${index * 0.08}s`;
+            observer.observe(item);
         });
 
         // Add hover effect to form inputs
