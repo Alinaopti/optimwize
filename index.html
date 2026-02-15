@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OptimWize - Scale Without Operational Chaos</title>
-    <meta name="description" content="Build the operational backbone that gives you clarity, control, and predictable growth. Fix the systems behind your revenue.">
+    <meta name="description" content="Transform growth chaos into predictable systems. We build the operational backbone that gives you clarity, control, and scalable growth.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='18' cy='18' r='16' stroke='%232563EB' stroke-width='2.5'/%3E%3Cpath d='M18 6 L18 18 L30 18' stroke='%232563EB' stroke-width='2.5' stroke-linecap='round'/%3E%3Ccircle cx='18' cy='18' r='3' fill='%232563EB'/%3E%3C/svg%3E">
+    <link rel="alternate icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAIoSURBVHgB7VbBbtpAEJ3Z9QJSf6AHDkhI/YFKPbT0C+qeoF4q9Vb1B3pM+gNwSH6gUg/0B3qoVKnqIUTiB8IPcOAQqT0k7M7OTNZgjDFgU6lSD0jaXe/Mzpt582YJ/iNhvV7PYrFYBYZhVBmGUUVRFPn5M4qiKAzDMAzDkGVZFvb7/R4RPSGi5+l0+ozjOI7jOI7jfhQ8z6vKsvwQQtgSQpwQ0QkRnbTb7Wc8zzPNZrMKIRwR0dF+v38EIRy1Wq2nPM8zzWazCiEciRDCUbvdfspxHMdxHMf9dnieVwUATgGAUwDglOM4juM4jvs5cF0XNxqNG2azmaU4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM4juM47v+LL1YO2GF5tMzGAAAAAElFTkSuQmCC">
+    
     <style>
+        /* ===== RESET & BASE ===== */
         * {
             margin: 0;
             padding: 0;
@@ -13,41 +19,93 @@
         }
 
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1e40af;
-            --secondary: #0f172a;
-            --accent: #06b6d4;
-            --cta-green: #10b981;
-            --cta-green-dark: #059669;
-            --text: #1e293b;
-            --text-light: #64748b;
-            --bg: #ffffff;
-            --bg-light: #f8fafc;
-            --border: #e2e8f0;
+            /* Colors - 60-30-10 Rule */
+            --neutral-bg: #F9FAFB;
+            --neutral-white: #FFFFFF;
+            --neutral-light: #F3F4F6;
+            --secondary: #1E293B;
+            --secondary-light: #475569;
+            --accent-primary: #2563EB;
+            --accent-hover: #1D4ED8;
+            --accent-green: #10B981;
+            --accent-green-hover: #059669;
+            --success: #22C55E;
+            --info: #22D3EE;
+            --border: #E5E7EB;
+            --text: #1E293B;
+            --text-light: #64748B;
+            --text-muted: #94A3B8;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: var(--text);
-            background: var(--bg);
+            background: var(--neutral-bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Navigation */
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--secondary);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+        }
+
+        p {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .container-narrow {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ===== NAVIGATION ===== */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(12px);
             z-index: 1000;
             border-bottom: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 1.25rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -56,585 +114,56 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--secondary);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo svg {
+            width: 36px;
+            height: 36px;
+        }
+
+        .logo-icon {
+            fill: none;
+            stroke: var(--accent-primary);
+            stroke-width: 2.5;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
             color: var(--text);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
         }
 
         .nav-links a:hover {
-            color: var(--primary);
+            color: var(--accent-primary);
         }
 
-        /* Hero Section */
-        .hero {
-            margin-top: 80px;
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1.125rem 3rem;
-            background: var(--cta-green);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.15rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.5);
-            background: var(--cta-green-dark);
-        }
-
-        .cta-button-secondary {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .cta-button-secondary:hover {
-            background: rgba(255, 255, 255, 0.3);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        /* Stats Section */
-        .stats {
-            padding: 4rem 2rem;
-            background: var(--secondary);
-            color: white;
-        }
-
-        .stats-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-item p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* Pain Points Section */
-        .pain-points {
-            padding: 8rem 2rem;
-            background: var(--bg-light);
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--secondary);
-        }
-
-        .section-header p {
-            font-size: 1.1rem;
-            color: var(--text-light);
-        }
-
-        .pain-list {
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            list-style: none;
-        }
-
-        .pain-list li {
-            padding: 1.25rem 1.5rem;
-            background: white;
-            margin-bottom: 1rem;
+        .nav-cta {
+            padding: 0.625rem 1.5rem;
+            background: var(--accent-primary);
+            color: white !important;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            font-size: 1.1rem;
-            color: var(--text);
-            position: relative;
-            padding-left: 3.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .pain-list li:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .pain-list li::before {
-            content: '✗';
-            position: absolute;
-            left: 1.25rem;
-            color: #ef4444;
-            font-weight: 700;
-            font-size: 1.3rem;
-        }
-
-        .pain-subtext {
-            text-align: center;
-            font-size: 1.2rem;
-            color: var(--text);
             font-weight: 600;
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 2rem;
-            background: white;
-            border-radius: 12px;
-            border-left: 4px solid var(--primary);
+            transition: all 0.2s ease;
         }
 
-        /* Services Section */
-        .services {
-            padding: 8rem 2rem;
-            background: white;
-        }
-
-        .services-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 2px solid transparent;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            border-color: var(--accent);
-        }
-
-        .service-card:hover .service-icon {
-            transform: rotate(360deg) scale(1.1);
-        }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: white;
-            transition: all 0.5s ease;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--secondary);
-        }
-
-        .service-card ul {
-            list-style: none;
-            color: var(--text-light);
-            line-height: 1.9;
-        }
-
-        .service-card ul li {
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .service-card ul li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--cta-green);
-            font-weight: 700;
-        }
-
-        .services-subtext {
-            text-align: center;
-            font-size: 1.2rem;
-            color: var(--text);
-            font-weight: 600;
-            max-width: 700px;
-            margin: 3rem auto 0;
-            padding: 2rem;
-            background: var(--bg-light);
-            border-radius: 12px;
-        }
-
-        /* Process Section */
-        .process {
-            padding: 8rem 2rem;
-            background: #fafbfc;
-        }
-
-        .process-steps {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            gap: 3rem;
-        }
-
-        .step {
-            display: grid;
-            grid-template-columns: 80px 1fr;
-            gap: 2rem;
-            align-items: start;
-        }
-
-        .process-connector {
-            position: relative;
-        }
-
-        .process-connector::before {
-            content: '';
-            position: absolute;
-            left: 40px;
-            top: 80px;
-            bottom: -40px;
-            width: 3px;
-            background: linear-gradient(180deg, var(--primary), var(--accent));
-            opacity: 0.3;
-        }
-
-        .step:last-child .process-connector::before {
-            display: none;
-        }
-
-        .step-number {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: 700;
+        .nav-cta:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 1;
-        }
-
-        .step:hover .step-number {
-            transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
-        }
-
-        .step-number::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: inherit;
-            z-index: -1;
-            opacity: 0;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 0;
-            }
-            50% {
-                transform: scale(1.15);
-                opacity: 0.3;
-            }
-        }
-
-        .step-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--secondary);
-        }
-
-        .step-content p {
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-
-        /* Results Section */
-        .results {
-            padding: 8rem 2rem;
-            background: var(--bg-light);
-        }
-
-        .results-list {
-            max-width: 900px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .result-item {
-            background: white;
-            padding: 1.75rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            font-size: 1.1rem;
-            color: var(--text);
-            position: relative;
-            padding-left: 3.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .result-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-        }
-
-        .result-item::before {
-            content: '✓';
-            position: absolute;
-            left: 1.25rem;
-            color: var(--cta-green);
-            font-weight: 700;
-            font-size: 1.4rem;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 8rem 2rem;
-            background: white;
-        }
-
-        .testimonials-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-            border-color: var(--primary);
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            color: var(--text);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-
-        .author-info h4 {
-            font-size: 1rem;
-            color: var(--secondary);
-            margin-bottom: 0.2rem;
-        }
-
-        .author-info p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 8rem 2rem;
-            background: var(--bg-light);
-        }
-
-        .contact-container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-            transition: transform 0.2s ease;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--secondary);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.875rem;
-            border: 2px solid var(--border);
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .submit-button {
-            width: 100%;
-            padding: 1.125rem;
-            background: var(--cta-green);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .submit-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .submit-button:hover::before {
-            left: 100%;
-        }
-
-        .submit-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.5);
-            background: var(--cta-green-dark);
-        }
-
-        .submit-button:active {
-            transform: translateY(0);
-        }
-
-        /* Footer */
-        footer {
-            padding: 3rem 2rem;
-            background: var(--secondary);
-            color: white;
-            text-align: center;
-        }
-
-        footer p {
-            opacity: 0.8;
         }
 
         /* Mobile Menu */
@@ -646,101 +175,745 @@
             cursor: pointer;
             color: var(--text);
             padding: 0.5rem;
-            z-index: 1001;
         }
 
         .mobile-overlay {
             display: none;
-            position: fixed;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--accent-green);
+            color: white;
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-green-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--secondary);
+            border: 2px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            margin-top: 80px;
+            padding: 6rem 0 5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 999;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.4;
         }
 
-        .mobile-overlay.active {
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-trust-signals {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            opacity: 0.95;
+        }
+
+        .trust-signal-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .trust-signal-item svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .hero h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .hero-subheadline {
+            font-size: 1.35rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== TRUST BAR ===== */
+        .trust-bar {
+            padding: 3rem 0;
+            background: var(--secondary);
+        }
+
+        .trust-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .trust-stat h3 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--info);
+            margin-bottom: 0.5rem;
+        }
+
+        .trust-stat p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+
+        /* ===== PAIN POINTS SECTION ===== */
+        .pain-section {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .pain-card {
+            background: var(--neutral-light);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .pain-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+            border-color: #EF4444;
+        }
+
+        .pain-icon {
+            width: 48px;
+            height: 48px;
+            background: #FEE2E2;
+            color: #EF4444;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .pain-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: #EF4444;
+        }
+
+        .pain-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .pain-card ul {
+            list-style: none;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .pain-card ul li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .pain-card ul li::before {
+            content: '×';
+            position: absolute;
+            left: 0;
+            color: #EF4444;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .pain-callout {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-green));
+            padding: 2.5rem;
+            border-radius: 16px;
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pain-callout p {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* ===== FEATURES SECTION ===== */
+        .features-section {
+            padding: 6rem 0;
+            background: var(--neutral-bg);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+            border-color: var(--accent-primary);
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--info));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.5s ease;
+            color: white;
+        }
+
+        .feature-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: white;
+            fill: none;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card ul {
+            list-style: none;
+            color: var(--text-light);
+            line-height: 1.9;
+        }
+
+        .feature-card ul li {
+            padding-left: 1.75rem;
+            position: relative;
+            margin-bottom: 0.625rem;
+        }
+
+        .feature-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .features-footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+        }
+
+        .features-footer p {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        /* ===== PROCESS SECTION ===== */
+        .process-section {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--info));
+            z-index: 0;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-number {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 3px solid var(--accent-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-primary);
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover .process-number {
+            transform: scale(1.1);
+            background: var(--accent-primary);
+            color: white;
+        }
+
+        .process-step h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .process-step p {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        /* ===== RESULTS SECTION ===== */
+        .results-section {
+            padding: 6rem 0;
+            background: var(--neutral-bg);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .result-item {
+            background: white;
+            padding: 1.75rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+        }
+
+        .result-item:hover {
+            transform: translateX(4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+            border-color: var(--success);
+        }
+
+        .result-icon {
+            width: 32px;
+            height: 32px;
+            background: #DCFCE7;
+            color: var(--success);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .result-item p {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--secondary);
+            margin: 0;
+        }
+
+        /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials-section {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--neutral-light);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent-primary);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1.5rem;
+            left: 2rem;
+            font-size: 4rem;
+            color: var(--accent-primary);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-microtag {
+            display: inline-block;
+            padding: 0.375rem 0.875rem;
+            background: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--info));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .author-info h4 {
+            font-size: 1.05rem;
+            color: var(--secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0 0 0.5rem 0;
+        }
+
+        .author-linkedin {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            font-size: 0.85rem;
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .author-linkedin:hover {
+            color: var(--accent-hover);
+        }
+
+        .author-linkedin svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* ===== TRUST BADGES ===== */
+        .trust-badges-section {
+            padding: 4rem 0;
+            background: white;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .trust-badges-grid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.5rem;
+            background: var(--neutral-light);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            min-width: 140px;
+        }
+
+        .trust-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .trust-badge-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .trust-badge-icon svg {
+            width: 36px;
+            height: 36px;
+        }
+
+        .trust-badge-text {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text);
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
+            padding: 6rem 0;
+            background: var(--neutral-bg);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .form-group {
+            margin-bottom: 1.75rem;
+        }
+
+        .form-group label {
             display: block;
-            opacity: 1;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 0.625rem;
+            font-size: 0.95rem;
         }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                height: 100vh;
-                width: 70%;
-                max-width: 300px;
-                background: white;
-                flex-direction: column;
-                padding: 5rem 2rem 2rem;
-                box-shadow: -2px 0 10px rgba(0,0,0,0.1);
-                transition: right 0.3s ease;
-                z-index: 1000;
-                gap: 0;
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .nav-links li {
-                width: 100%;
-                border-bottom: 1px solid var(--border);
-            }
-
-            .nav-links a {
-                display: block;
-                padding: 1.25rem 0;
-                font-size: 1.1rem;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .step {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .step-number {
-                margin: 0 auto;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .cta-button {
-                width: 100%;
-                max-width: 300px;
-            }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1.125rem;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.2s ease;
+            background: var(--neutral-white);
         }
 
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
 
-        /* Scroll animations */
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .form-trust {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 3rem 0;
+            background: var(--secondary);
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+        }
+
+        /* ===== STICKY CTA BAR ===== */
+        .sticky-cta {
+            position: fixed;
+            bottom: -100px;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+            padding: 1rem 0;
+            z-index: 900;
+            transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-top: 1px solid var(--border);
+        }
+
+        .sticky-cta.visible {
+            bottom: 0;
+        }
+
+        .sticky-cta-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .sticky-cta-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: var(--secondary);
+        }
+
+        .sticky-cta-text p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .sticky-cta .btn {
+            white-space: nowrap;
+        }
+
+        /* ===== ANIMATIONS ===== */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -752,26 +925,107 @@
             transform: translateY(0);
         }
 
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-steps::before {
+                display: none;
+            }
         }
 
-        .slide-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 75%;
+                max-width: 320px;
+                background: white;
+                flex-direction: column;
+                padding: 6rem 2rem 2rem;
+                box-shadow: -4px 0 16px rgba(0, 0, 0, 0.1);
+                transition: right 0.3s ease;
+                z-index: 1000;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
 
-        .slide-in-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
+            .nav-links.active {
+                right: 0;
+            }
 
-        .slide-in-right.visible {
-            opacity: 1;
-            transform: translateX(0);
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .mobile-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .mobile-overlay.active {
+                display: block;
+                opacity: 1;
+            }
+
+            .hero {
+                padding: 4rem 0 3rem;
+            }
+
+            .pain-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .sticky-cta-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .sticky-cta .btn {
+                width: 100%;
+            }
+
+            .hero-trust-signals {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -779,12 +1033,20 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo">OptimWize</a>
+            <a href="#" class="logo">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="18" cy="18" r="16" class="logo-icon"/>
+                    <path d="M18 6 L18 18 L30 18" class="logo-icon" stroke-linecap="round"/>
+                    <circle cx="18" cy="18" r="3" fill="currentColor"/>
+                </svg>
+                OptimWize
+            </a>
             <ul class="nav-links">
-                <li><a href="#pain-points">Challenges</a></li>
-                <li><a href="#services">Solutions</a></li>
+                <li><a href="#pain">Challenges</a></li>
+                <li><a href="#features">Solutions</a></li>
                 <li><a href="#process">Process</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#testimonials">Clients</a></li>
+                <li><a href="#contact" class="nav-cta">Book a Call</a></li>
             </ul>
             <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
         </div>
@@ -793,129 +1055,203 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Scaling fast but everything feels messy?</h1>
-        <p>Leads slip through the cracks. Teams work in silos. Reports don't match reality. You didn't start your company to manage spreadsheets, broken pipelines, and tool chaos. We build the operational backbone that gives you clarity, control, and predictable growth — so your team can scale without friction.</p>
-        <div class="cta-buttons">
-            <a href="#contact" class="cta-button">Book a Strategy Call</a>
-            <a href="#process" class="cta-button cta-button-secondary">See How It Works</a>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Scaling fast but everything feels messy?</h1>
+                <p class="hero-subheadline">
+                    Leads slip through the cracks. Teams work in silos. Growth shouldn't feel chaotic.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="#contact" class="btn btn-primary">Book Your Free Strategy Call Today</a>
+                    <a href="#process" class="btn btn-secondary">See How It Works</a>
+                </div>
+                <div class="hero-trust-signals">
+                    <div class="trust-signal-item">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 12L11 14L15 10M19 10C19 14.9706 14.9706 19 10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Schedule a discovery call to see how it works</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Stats Section (kept for credibility) -->
-    <section class="stats">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <h3>85%</h3>
-                <p>Average Revenue Increase</p>
-            </div>
-            <div class="stat-item">
-                <h3>50+</h3>
-                <p>Clients Served</p>
-            </div>
-            <div class="stat-item">
-                <h3>200%</h3>
-                <p>Average ROI</p>
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="container">
+            <div class="trust-stats">
+                <div class="trust-stat">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto 1rem;">
+                        <path d="M24 4L6 12V22C6 33 13 42 24 44C35 42 42 33 42 22V12L24 4Z" stroke="#22D3EE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M18 24L22 28L30 18" stroke="#22D3EE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <p>Trusted by early-stage and growth-stage teams</p>
+                </div>
+                <div class="trust-stat">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto 1rem;">
+                        <path d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z" stroke="#22D3EE" stroke-width="3"/>
+                        <path d="M24 14V24L30 28" stroke="#22D3EE" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <p>Helping founders streamline operations and make data-driven decisions</p>
+                </div>
+                <div class="trust-stat">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto 1rem;">
+                        <path d="M14 24L20 30L34 16" stroke="#22D3EE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="24" cy="24" r="20" stroke="#22D3EE" stroke-width="3"/>
+                    </svg>
+                    <p>Expert RevOps support tailored for startups and scale-ups</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Pain Points Section -->
-    <section id="pain-points" class="pain-points">
-        <div class="section-header">
-            <h2>Does this sound familiar?</h2>
-        </div>
-        <ul class="pain-list">
-            <li>Revenue numbers don't match across tools</li>
-            <li>Sales, marketing & CS are misaligned</li>
-            <li>Your CRM is messy or barely used</li>
-            <li>You don't know which metrics actually matter</li>
-            <li>Processes live in people's heads</li>
-            <li>Growth creates more chaos, not clarity</li>
-            <li>Reporting takes hours and still feels unreliable</li>
-        </ul>
-        <div class="pain-subtext">
-            If scaling feels harder than it should, the problem isn't growth. It's the systems behind it.
+    <section id="pain" class="pain-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Does this sound familiar?</h2>
+                <p style="font-style: italic; color: var(--text-muted);">If you're a founder or exec at a $1M–$50M company...</p>
+            </div>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <div class="pain-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 9V13M12 17H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Chaos & Misalignment</h3>
+                    <ul>
+                        <li>You're frustrated by revenue numbers that don't match across tools</li>
+                        <li>Sales, marketing & CS work in silos while you watch opportunities slip away</li>
+                        <li>Growth creates more chaos, not clarity</li>
+                    </ul>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 7H21M13 12H21M13 17H21M6 20V4M6 20L3 17M6 20L9 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Invisible Metrics</h3>
+                    <ul>
+                        <li>You're tired of not knowing which metrics actually matter</li>
+                        <li>Reporting takes hours and you still don't trust the numbers</li>
+                        <li>No clear visibility into what's actually driving performance</li>
+                    </ul>
+                </div>
+                <div class="pain-card">
+                    <div class="pain-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 6V12L16 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Missed Opportunities</h3>
+                    <ul>
+                        <li>Leads fall through the cracks when your CRM is messy or barely used</li>
+                        <li>Critical processes live in people's heads, not documented systems</li>
+                        <li>Manual work slows everything down while competitors move faster</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pain-callout">
+                <p>If scaling feels harder than it should, the problem isn't growth. It's the systems behind it.</p>
+            </div>
         </div>
     </section>
 
-    <!-- What We Do Section -->
-    <section id="services" class="services">
-        <div class="section-header">
-            <h2>We build the systems behind predictable growth</h2>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🎯</div>
-                <h3>Operational Clarity</h3>
-                <ul>
-                    <li>Define and streamline your processes</li>
-                    <li>Identify bottlenecks slowing growth</li>
-                    <li>Optimize workflows and execution</li>
-                </ul>
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>We build the systems behind predictable growth</h2>
             </div>
-            <div class="service-card">
-                <div class="service-icon">📊</div>
-                <h3>Metrics & Visibility</h3>
-                <ul>
-                    <li>KPI design & performance tracking</li>
-                    <li>Dashboards & real-time reporting</li>
-                    <li>Data clarity for confident decisions</li>
-                </ul>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Operational Clarity</h3>
+                    <ul>
+                        <li>Define and streamline your processes</li>
+                        <li>Identify bottlenecks slowing growth</li>
+                        <li>Optimize workflows and execution</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 19V6C9 4.89543 9.89543 4 11 4H13C14.1046 4 15 4.89543 15 6V19M9 19H15M9 19H5M15 19H19M3 19L5 19M19 19H21M3 14H5M19 14H21M3 9H5M19 9H21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Metrics & Visibility</h3>
+                    <ul>
+                        <li>KPI design & performance tracking</li>
+                        <li>Dashboards & real-time reporting</li>
+                        <li>Data clarity for confident decisions</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.325 4.317C10.751 2.561 13.249 2.561 13.675 4.317C13.7389 4.5808 13.8642 4.82578 14.0407 5.032C14.2172 5.23822 14.4399 5.39985 14.6907 5.50375C14.9414 5.60764 15.2132 5.65085 15.4838 5.62987C15.7544 5.60889 16.0162 5.5243 16.248 5.383C17.791 4.443 19.558 6.209 18.618 7.753C18.4769 7.98466 18.3924 8.24634 18.3715 8.51677C18.3506 8.78721 18.3938 9.05877 18.4975 9.30938C18.6013 9.55999 18.7627 9.78258 18.9687 9.95905C19.1747 10.1355 19.4194 10.2609 19.683 10.325C21.439 10.751 21.439 13.249 19.683 13.675C19.4192 13.7389 19.1742 13.8642 18.968 14.0407C18.7618 14.2172 18.6001 14.4399 18.4963 14.6907C18.3924 14.9414 18.3491 15.2132 18.3701 15.4838C18.3911 15.7544 18.4757 16.0162 18.617 16.248C19.557 17.791 17.791 19.558 16.247 18.618C16.0153 18.4769 15.7537 18.3924 15.4832 18.3715C15.2128 18.3506 14.9412 18.3938 14.6906 18.4975C14.44 18.6013 14.2174 18.7627 14.0409 18.9687C13.8645 19.1747 13.7391 19.4194 13.675 19.683C13.249 21.439 10.751 21.439 10.325 19.683C10.2611 19.4192 10.1358 19.1742 9.95929 18.968C9.7828 18.7618 9.56011 18.6001 9.30935 18.4963C9.05859 18.3924 8.78683 18.3491 8.51621 18.3701C8.24559 18.3911 7.98375 18.4757 7.752 18.617C6.209 19.557 4.442 17.791 5.382 16.247C5.5231 16.0153 5.60755 15.7537 5.62848 15.4832C5.64942 15.2128 5.60624 14.9412 5.50247 14.6906C5.3987 14.44 5.23726 14.2174 5.03127 14.0409C4.82529 13.8645 4.58056 13.7391 4.317 13.675C2.561 13.249 2.561 10.751 4.317 10.325C4.5808 10.2611 4.82578 10.1358 5.032 9.95929C5.23822 9.7828 5.39985 9.56011 5.50375 9.30935C5.60764 9.05859 5.65085 8.78683 5.62987 8.51621C5.60889 8.24559 5.5243 7.98375 5.383 7.752C4.443 6.209 6.209 4.442 7.753 5.382C8.753 5.99 10.049 5.452 10.325 4.317Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Systems & Automation</h3>
+                    <ul>
+                        <li>CRM setup & optimization</li>
+                        <li>Workflow automation and integrations</li>
+                        <li>Tech stack evaluation & optimization</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 21V5C19 3.89543 18.1046 3 17 3H7C5.89543 3 5 3.89543 5 5V21M19 21H21M19 21H14M5 21H3M5 21H10M9 7H10M9 11H10M14 7H15M14 11H15M10 21V16C10 15.4477 10.4477 15 11 15H13C13.5523 15 14 15.4477 14 16V21M10 21H14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Scalable Infrastructure</h3>
+                    <ul>
+                        <li>Knowledge bases & playbooks</li>
+                        <li>Standardized documentation</li>
+                        <li>Operational frameworks that scale</li>
+                    </ul>
+                </div>
             </div>
-            <div class="service-card">
-                <div class="service-icon">⚙️</div>
-                <h3>Systems & Automation</h3>
-                <ul>
-                    <li>CRM setup & optimization</li>
-                    <li>Workflow automation and tool integrations</li>
-                    <li>Tech stack evaluation & optimization</li>
-                </ul>
+            <div class="features-footer">
+                <p>So your team moves faster, makes better decisions, and scales predictably.</p>
             </div>
-            <div class="service-card">
-                <div class="service-icon">🔧</div>
-                <h3>Scalable Infrastructure</h3>
-                <ul>
-                    <li>Knowledge bases & playbooks</li>
-                    <li>Standardized documentation</li>
-                    <li>Operational frameworks that scale</li>
-                </ul>
-            </div>
-        </div>
-        <div class="services-subtext">
-            So your team moves faster, makes better decisions, and scales predictably.
         </div>
     </section>
 
-    <!-- How We Work Section -->
-    <section id="process" class="process">
-        <div class="section-header">
-            <h2>From chaos to clarity</h2>
-        </div>
-        <div class="process-steps">
-            <div class="step process-connector">
-                <div class="step-number">1</div>
-                <div class="step-content">
+    <!-- Process Section -->
+    <section id="process" class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>From chaos to clarity</h2>
+                <p>A proven 4-step methodology that delivers results</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="process-number">1</div>
                     <h3>Diagnose</h3>
                     <p>We identify bottlenecks, inefficiencies, and blind spots.</p>
                 </div>
-            </div>
-            <div class="step process-connector">
-                <div class="step-number">2</div>
-                <div class="step-content">
+                <div class="process-step">
+                    <div class="process-number">2</div>
                     <h3>Design</h3>
                     <p>We create scalable workflows, metrics, and operational systems.</p>
                 </div>
-            </div>
-            <div class="step process-connector">
-                <div class="step-number">3</div>
-                <div class="step-content">
+                <div class="process-step">
+                    <div class="process-number">3</div>
                     <h3>Enable</h3>
                     <p>We implement dashboards, automations, and tool integrations.</p>
                 </div>
-            </div>
-            <div class="step">
-                <div class="step-number">4</div>
-                <div class="step-content">
+                <div class="process-step">
+                    <div class="process-number">4</div>
                     <h3>Optimize</h3>
                     <p>We monitor performance and continuously refine processes.</p>
                 </div>
@@ -924,68 +1260,174 @@
     </section>
 
     <!-- Results Section -->
-    <section id="results" class="results">
-        <div class="section-header">
-            <h2>What changes after we work together</h2>
-        </div>
-        <div class="results-list">
-            <div class="result-item">Clear visibility into performance</div>
-            <div class="result-item">Aligned teams & smoother handoffs</div>
-            <div class="result-item">Reliable forecasting & reporting</div>
-            <div class="result-item">Faster execution with fewer errors</div>
-            <div class="result-item">Less manual work & tool chaos</div>
-            <div class="result-item">Scalable processes that support growth</div>
+    <section class="results-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What changes after we work together</h2>
+            </div>
+            <div class="results-grid">
+                <div class="result-item">
+                    <div class="result-icon">✓</div>
+                    <p>Clear visibility into performance</p>
+                </div>
+                <div class="result-item">
+                    <div class="result-icon">✓</div>
+                    <p>Aligned teams & smoother handoffs</p>
+                </div>
+                <div class="result-item">
+                    <div class="result-icon">✓</div>
+                    <p>Reliable forecasting & reporting</p>
+                </div>
+                <div class="result-item">
+                    <div class="result-icon">✓</div>
+                    <p>Faster execution with fewer errors</p>
+                </div>
+                <div class="result-item">
+                    <div class="result-icon">✓</div>
+                    <p>Less manual work & tool chaos</p>
+                </div>
+                <div class="result-item">
+                    <div class="result-icon">✓</div>
+                    <p>Scalable processes that support growth</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Testimonials Section (kept with original testimonials) -->
-    <section id="testimonials" class="testimonials">
-        <div class="section-header">
-            <h2>What Our Clients Say</h2>
-            <p>Real results from real businesses</p>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Real results from real businesses</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text" style="font-style: italic; font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.75rem; min-height: 120px;">
+                        "Working with OptimWize brought clarity and stability to our operations. You made complex processes feel simple and manageable."
+                    </p>
+                    <div style="margin-bottom: 1.75rem;">
+                        <div style="display: grid; grid-template-columns: 1fr; gap: 0.625rem;">
+                            <span style="display: flex; align-items: center; gap: 0.625rem; padding: 0.625rem 1rem; background: #DCFCE7; color: #166534; border-radius: 8px; font-size: 0.875rem; font-weight: 600;">
+                                <span style="font-size: 1.1rem;">⚡</span>
+                                <span>Streamlined internal processes</span>
+                            </span>
+                            <span style="display: flex; align-items: center; gap: 0.625rem; padding: 0.625rem 1rem; background: #DBEAFE; color: #1e40af; border-radius: 8px; font-size: 0.875rem; font-weight: 600;">
+                                <span style="font-size: 1.1rem;">📊</span>
+                                <span>Improved visibility into workload</span>
+                            </span>
+                            <span style="display: flex; align-items: center; gap: 0.625rem; padding: 0.625rem 1rem; background: #FEF3C7; color: #92400e; border-radius: 8px; font-size: 0.875rem; font-weight: 600;">
+                                <span style="font-size: 1.1rem;">🚀</span>
+                                <span>Faster turnaround, fewer errors</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Alexandru</h4>
+                            <p>CTO, Remoute.com</p>
+                            <a href="https://www.linkedin.com/in/iamalexstanciu/" target="_blank" rel="noopener" class="author-linkedin">
+                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                                </svg>
+                                Verify on LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text" style="font-style: italic; font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.75rem; min-height: 120px;">
+                        "OptimWize felt like part of our team. Your clarity and structure made day-to-day operations smoother and much easier to manage."
+                    </p>
+                    <div style="margin-bottom: 1.75rem;">
+                        <div style="display: grid; grid-template-columns: 1fr; gap: 0.625rem;">
+                            <span style="display: flex; align-items: center; gap: 0.625rem; padding: 0.625rem 1rem; background: #DCFCE7; color: #166534; border-radius: 8px; font-size: 0.875rem; font-weight: 600;">
+                                <span style="font-size: 1.1rem;">⚡</span>
+                                <span>Clearer responsibilities and workflows</span>
+                            </span>
+                            <span style="display: flex; align-items: center; gap: 0.625rem; padding: 0.625rem 1rem; background: #DBEAFE; color: #1e40af; border-radius: 8px; font-size: 0.875rem; font-weight: 600;">
+                                <span style="font-size: 1.1rem;">📊</span>
+                                <span>Better team alignment</span>
+                            </span>
+                            <span style="display: flex; align-items: center; gap: 0.625rem; padding: 0.625rem 1rem; background: #FEF3C7; color: #92400e; border-radius: 8px; font-size: 0.875rem; font-weight: 600;">
+                                <span style="font-size: 1.1rem;">🚀</span>
+                                <span>Smoother day-to-day operations</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">F</div>
+                        <div class="author-info">
+                            <h4>Flavian Dumitru Gradinaru</h4>
+                            <p>Co-Founder, ELEVANE</p>
+                            <a href="https://www.linkedin.com/in/flavian-gradinaru-cpsih-27b79b384/" target="_blank" rel="noopener" class="author-linkedin">
+                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                                </svg>
+                                Verify on LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <p class="testimonial-text">"OptimWize transformed our revenue operations. Within 6 months, we saw a 40% increase in sales productivity and our forecasting accuracy improved dramatically."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">JS</div>
-                    <div class="author-info">
-                        <h4>John Smith</h4>
-                        <p>VP of Sales, TechCorp</p>
-                    </div>
-                </div>
+    </section>
+
+    <!-- Trust Badges Section -->
+    <section class="trust-badges-section">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 2.5rem;">
+                <h3 style="font-size: 1.5rem; color: var(--text-light);">Trusted & Verified</h3>
             </div>
-            <div class="testimonial-card">
-                <p class="testimonial-text">"The team's expertise in data analytics helped us identify $2M in untapped revenue. Their strategic approach and hands-on support made all the difference."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">MJ</div>
-                    <div class="author-info">
-                        <h4>Maria Johnson</h4>
-                        <p>CEO, Growth Ventures</p>
+            <div class="trust-badges-grid">
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 4L6 12V22C6 33 13 42 24 44C35 42 42 33 42 22V12L24 4Z" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18 24L22 28L30 18" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
+                    <span class="trust-badge-text">Satisfaction-Focused<br>Consulting</span>
                 </div>
-            </div>
-            <div class="testimonial-card">
-                <p class="testimonial-text">"Finally, a RevOps partner that understands both the technical and strategic aspects. They didn't just implement tools—they transformed how our teams work together."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">DL</div>
-                    <div class="author-info">
-                        <h4>David Lee</h4>
-                        <p>COO, Scale Inc</p>
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="6" y="10" width="36" height="28" rx="4" stroke="#2563EB" stroke-width="3"/>
+                            <path d="M6 18H42M14 26H18M14 30H18" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
                     </div>
+                    <span class="trust-badge-text">GDPR<br>Compliant</span>
+                </div>
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 8C9.37258 8 4 13.3726 4 20C4 26.6274 9.37258 32 16 32H24M32 8C38.6274 8 44 13.3726 44 20C44 26.6274 38.6274 32 32 32H24M24 20H24.02" stroke="#22D3EE" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="trust-badge-text">Tailored for<br>Scale-Ups</span>
+                </div>
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 4V12M24 36V44M44 24H36M12 24H4M38.14 38.14L32.48 32.48M15.52 15.52L9.86 9.86M38.14 9.86L32.48 15.52M15.52 32.48L9.86 38.14" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
+                            <circle cx="24" cy="24" r="8" stroke="#10B981" stroke-width="3"/>
+                        </svg>
+                    </div>
+                    <span class="trust-badge-text">Strategic<br>Partnerships</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="section-header">
-            <h2>Ready to Scale Your Revenue?</h2>
-            <p>Let's discuss how we can help you achieve your growth goals</p>
-        </div>
-        <div class="contact-container">
-            <form id="contactForm" action="https://formspree.io/f/xvgeqwla" method="POST">
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ready to Scale Your Revenue?</h2>
+                <p>Let's discuss how we can help you achieve your growth goals</p>
+            </div>
+            <form class="contact-form" action="https://formspree.io/f/xvgeqwla" method="POST">
                 <div class="form-group">
                     <label for="name">Name *</label>
                     <input type="text" id="name" name="name" required>
@@ -999,17 +1441,31 @@
                     <input type="text" id="company" name="company">
                 </div>
                 <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <label for="message">Message (optional)</label>
+                    <textarea id="message" name="message"></textarea>
                 </div>
-                <button type="submit" class="submit-button">Book a Strategy Call</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Book a Strategy Call</button>
+                <p class="form-trust">We respect your privacy. No spam.</p>
             </form>
         </div>
     </section>
 
+    <!-- Sticky CTA Bar -->
+    <div class="sticky-cta" id="stickyCta">
+        <div class="sticky-cta-content">
+            <div class="sticky-cta-text">
+                <h4>Ready to transform your revenue operations?</h4>
+                <p>Schedule a free strategy call today</p>
+            </div>
+            <a href="#contact" class="btn btn-primary">Book Your Call</a>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 OptimWize. All rights reserved. | Scale without operational chaos.</p>
+        <div class="container">
+            <p>&copy; 2025 OptimWize. All rights reserved. | Scale without operational chaos.</p>
+        </div>
     </footer>
 
     <script>
@@ -1022,19 +1478,12 @@
         function toggleMobileMenu() {
             navLinks.classList.toggle('active');
             mobileOverlay.classList.toggle('active');
-            
-            // Change hamburger to X
-            if (navLinks.classList.contains('active')) {
-                mobileMenuBtn.textContent = '✕';
-            } else {
-                mobileMenuBtn.textContent = '☰';
-            }
+            mobileMenuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
         }
 
         mobileMenuBtn.addEventListener('click', toggleMobileMenu);
         mobileOverlay.addEventListener('click', toggleMobileMenu);
 
-        // Close menu when clicking a nav link
         navLinkItems.forEach(link => {
             link.addEventListener('click', () => {
                 if (navLinks.classList.contains('active')) {
@@ -1043,24 +1492,38 @@
             });
         });
 
-        // Smooth scroll for navigation links
+        // Sticky CTA bar
+        const stickyCta = document.getElementById('stickyCta');
+        let lastScrollY = window.scrollY;
+        
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            
+            // Show sticky CTA after scrolling past hero section
+            if (scrollY > 600 && scrollY > lastScrollY) {
+                stickyCta.classList.add('visible');
+            } else if (scrollY < 400) {
+                stickyCta.classList.remove('visible');
+            }
+            
+            lastScrollY = scrollY;
+        });
+
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
         // Scroll animations
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.15,
+            rootMargin: '0px 0px -80px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -1071,60 +1534,10 @@
             });
         }, observerOptions);
 
-        // Observe all service cards
-        document.querySelectorAll('.service-card').forEach((card, index) => {
-            card.classList.add('fade-in');
-            card.style.transitionDelay = `${index * 0.1}s`;
-            observer.observe(card);
-        });
-
-        // Observe all process steps
-        document.querySelectorAll('.step').forEach((step, index) => {
-            if (index % 2 === 0) {
-                step.classList.add('slide-in-left');
-            } else {
-                step.classList.add('slide-in-right');
-            }
-            step.style.transitionDelay = `${index * 0.15}s`;
-            observer.observe(step);
-        });
-
-        // Observe result items
-        document.querySelectorAll('.result-item').forEach((item, index) => {
-            item.classList.add('fade-in');
-            item.style.transitionDelay = `${index * 0.1}s`;
-            observer.observe(item);
-        });
-
-        // Observe testimonial cards
-        document.querySelectorAll('.testimonial-card').forEach((card, index) => {
-            card.classList.add('fade-in');
-            card.style.transitionDelay = `${index * 0.1}s`;
-            observer.observe(card);
-        });
-
-        // Observe stats
-        document.querySelectorAll('.stat-item').forEach((stat, index) => {
-            stat.classList.add('fade-in');
-            stat.style.transitionDelay = `${index * 0.1}s`;
-            observer.observe(stat);
-        });
-
-        // Observe pain points
-        document.querySelectorAll('.pain-list li').forEach((item, index) => {
-            item.classList.add('fade-in');
-            item.style.transitionDelay = `${index * 0.08}s`;
-            observer.observe(item);
-        });
-
-        // Add hover effect to form inputs
-        document.querySelectorAll('.form-group input, .form-group textarea').forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.style.transform = 'translateY(-2px)';
-            });
-            input.addEventListener('blur', function() {
-                this.parentElement.style.transform = 'translateY(0)';
-            });
+        // Observe elements
+        document.querySelectorAll('.pain-card, .feature-card, .process-step, .result-item, .testimonial-card').forEach(el => {
+            el.classList.add('fade-in');
+            observer.observe(el);
         });
     </script>
 </body>
